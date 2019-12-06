@@ -1,5 +1,5 @@
 # ObjectivePersonalityTest
-A self-report testing tool for typing someone in the Objective Personality system.
+A self-report testing tool for typing someone in the Objective Personality system. Reports a person's savior functions, function stack, and first animal in the animal stack.
 
 http://ops.lroy.us
 
