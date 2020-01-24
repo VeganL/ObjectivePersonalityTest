@@ -187,171 +187,181 @@ function enableNext(opt) {
     }
 }
 
+function typeDesc(type512) {
+    let returnString = '<h3>' + type512.substr(0,2) + '/' + type512.substr(2,5) + ' Type Description:</h2><p>';
+
+    let descPartsArray = [
+        "Lead consume types generally find it difficult to actually get started building something permanent because they are always looking for new options. However, because of this, they are continuous learners who generally have the highest consciousness among their peers.</p>",
+        "Lead sleep types generally like to conserve energy, keep to themselves, and try to avoid doing spontaneous activities unless it's absolutely necessary. If you are one, you may have gotten comments in the past about how you're not an outgoing person, uncooperative. Alternatively, you may have heard from others that you're very introspective.</p>",
+        "Lead play types usually live very active, busy, and extraverted lives. Whether or not they are genuinely happy doing so is a different matter, altogether. They generally have a tough time dealing with their inner dialogue and usually find discomforting to face.</p>",
+        "People often look up to lead blast types when they need someone they can count on. This is because they always seem to have a ready answer. However, lead blast types generally tend to overlook the specifics of a situation that aren't familiar to them or neglect new ideas, altogether, when trying to solve a problem.</p>",
+        "<p>The presence of Te in your function stack suggests that your form of reasoning is mostly based upon empirics and general consensus. You generally adopt the logic and opinions of other people in making a decision based on reasons and in the delegation of tasks. Your Fi suggests that your sense of identity is formed around what you value and morality. You also generally consume information that evokes an emotional response or anything that entertains/amuses you. However, as one of your \"demons\", you're more inclined to neglect this mode of attention.</p>",
+        "<p>The presence of Fe in your function stack suggests that you generally form your likes and dislikes based on what is socially acceptable. Maintaining harmony and good vibes is something you see as important when interacting with other people, and you try to do so when attempting to get other people to agree with you on something. Your Ti suggests that your sense of identity is formed around your reasons and what you consider to be true. Your information intake is also centered around things that make sense and how things work. However, as one of your \"demons\", you're more inclined to neglect this mode of attention.</p>",
+        "<p>Your Ti suggests that your sense of identity is formed around your reasons and what you consider to be true. Your information intake is also centered around things that make sense and how things work. The presence of Fe in your function stack suggests that you generally form your likes and dislikes based on what is socially acceptable. Maintaining harmony and good vibes is something you see as important when interacting with other people, and you try to do so when attempting to get other people to agree with you on something. However, as one of your \"demons\", you will tend to struggle with this function.</p>",
+        "<p>Your Fi suggests that your sense of identity is formed around what you value and morality. You also generally consume information that evokes an emotional response or anything that entertains/amuses you. The presence of Te in your function stack suggests that your form of reasoning is mostly based upon empirics and general consensus. You generally adopt the logic and opinions of other people in making a decision based on reasons and in the delegation of tasks. However, as one of your \"demons\", you will tend to struggle with this function.</p>",
+        "<p>Your mode of information intake is also generally more abstract because of your Ne. To learn things, you seek for patterns that are in the data and generally get new ideas from such information. Having Si means that the experiences you have or information taken in are stored into chronological series of events and procedures. This can can used to predict particular outcomes of future events. However, as one of your \"demons\", you will generally struggle with using such known detail usefully.",
+        "<p>Your mode of information intake is also generally more concrete because of your Se. To learn things, you tend to pay attention to the procedural details of a process or phenomena. Having Ni means that the experiences you have or knowledge you take in generally adds to universal archetypes which you can fit things into. This can be used to predict large-scale outcomes. However, as one of your \"demons\", you will generally avoid organizing such archetypes.",
+        "<p>Having Ni means that the experiences you have or knowledge you take in generally adds to universal archetypes which you can fit things into. This can be used to predict large-scale outcomes. Your mode of information intake is also generally more concrete because of your Se. To learn things, you tend to pay attention to the procedural details of a process or phenomena. However, as one of your \"demons\", you're more inclined to neglect the intake of such information.",
+        "<p>Having Si means that the experiences you have or information taken in are stored into chronological series of events and procedures. This can can used to predict particular outcomes of future events. Your mode of information intake is also generally more abstract because of your Ne. To learn things, you seek for patterns that are in the data and seek new ideas. However, as one of your \"demons\", you're more inclined to avoid the new ideas presented.",
+    ];
+
+    let typeDisectionArray = [
+        /-C/.test(type512),
+        /-S/.test(type512),
+        /-P/.test(type512),
+        /-B/.test(type512),
+        /Te/.test(type512),
+        /Fe/.test(type512),
+        /Ti/.test(type512),
+        /Fi/.test(type512),
+        /Ne/.test(type512),
+        /Se/.test(type512),
+        /Ni/.test(type512),
+        /Si/.test(type512),
+    ];
+
+    for (var i = 0; i < typeDisectionArray.length; i++) {
+        if (typeDisectionArray[i]) {
+            returnString += descPartsArray[i];
+        }
+    }
+
+    returnString += '</p>';
+    return returnString;
+}
+
 function loadType(type) {
     let type512;
     let mbti;
-    let desc;
-    switch (type) { //TODO: Type descriptions
+    switch (type) {
         case "1.1.1.1":
             type512 = 'FiNi-S';
             mbti = 'ISFP Jumper';
-            desc = '';
             break;
         case "1.1.1.2":
             type512 = 'FiSi-S';
             mbti = 'INFP Jumper';
-            desc = '';
             break;
         case "1.1.2.1":
             type512 = 'TiNi-S';
             mbti = 'ISTP Jumper';
-            desc = '';
             break;
         case "1.1.2.2":
             type512 = 'TiSi-S';
             mbti = 'INTP Jumper';
-            desc = '';
             break;
         case "1.2.1.1":
             type512 = 'FiSe-C';
             mbti = 'ISFP';
-            desc = '';
             break;
         case "1.2.1.2":
             type512 = 'FiNe-C';
             mbti = 'INFP';
-            desc = '';
             break;
         case "1.2.2.1":
             type512 = 'TiSe-C';
             mbti = 'ISTP';
-            desc = '';
             break;
         case "1.2.2.2":
             type512 = 'TiNe-C';
             mbti = 'INTP';
-            desc = '';
             break;
         case "2.1.1.1":
             type512 = 'FeSi-B';
             mbti = 'ESFJ';
-            desc = '';
             break;
         case "2.1.1.2":
             type512 = 'FeNi-B';
             mbti = 'ENFJ';
-            desc = '';
             break;
         case "2.1.2.1":
             type512 = 'TeSi-B';
             mbti = 'ESTJ';
-            desc = '';
             break;
         case "2.1.2.2":
             type512 = 'TeNi-B';
             mbti = 'ENTJ';
-            desc = '';
             break;
         case "2.2.1.1":
             type512 = 'FeNe-P';
             mbti = 'ESFJ Jumper';
-            desc = '';
             break;
         case "2.2.1.2":
             type512 = 'FeSe-P';
             mbti = 'ENFJ Jumper';
-            desc = '';
             break;
         case "2.2.2.1":
             type512 = 'TeNe-P';
             mbti = 'ESTJ Jumper';
-            desc = '';
             break;
         case "2.2.2.2":
             type512 = 'TeSe-P';
             mbti = 'ENTJ Jumper';
-            desc = '';
             break;
         case "3.1.1.1":
             type512 = 'SiTi-S';
             mbti = 'ISFJ Jumper';
-            desc = '';
             break;
         case "3.1.1.2":
             type512 = 'SiFi-S';
             mbti = 'ISTJ Jumper';
-            desc = '';
             break;
         case "3.1.2.1":
             type512 = 'NiTi-S';
             mbti = 'INFJ Jumper';
-            desc = '';
             break;
         case "3.1.2.2":
             type512 = 'NiFi-S';
             mbti = 'INTJ Jumper';
-            desc = '';
             break;
         case "3.2.1.1":
             type512 = 'SiFe-B';
             mbti = 'ISFJ';
-            desc = '';
             break;
         case "3.2.1.2":
             type512 = 'SiTe-B';
             mbti = 'ISTJ';
-            desc = '';
             break;
         case "3.2.2.1":
             type512 = 'NiFe-B';
             mbti = 'INFJ';
-            desc = '';
             break;
         case "3.2.2.2":
             type512 = 'NiTe-B';
             mbti = 'INTJ';
-            desc = '';
             break;
         case "4.1.1.1":
             type512 = 'SeFi-C';
             mbti = 'ESFP';
-            desc = '';
             break;
         case "4.1.1.2":
             type512 = 'SeTi-C';
             mbti = 'ESTP';
-            desc = '';
             break;
         case "4.1.2.1":
             type512 = 'NeFi-C';
             mbti = 'ENFP';
-            desc = '';
             break;
         case "4.1.2.2":
             type512 = 'NeTi-C';
             mbti = 'ENTP';
-            desc = '';
             break;
         case "4.2.1.1":
             type512 = 'SeTe-P';
             mbti = 'ESFP Jumper';
-            desc = '';
             break;
         case "4.2.1.2":
             type512 = 'SeFe-P';
             mbti = 'ESTP Jumper';
-            desc = '';
             break;
         case "4.2.2.1":
             type512 = 'NeTe-P';
             mbti = 'ENFP Jumper';
-            desc = '';
             break;
         case "4.2.2.2":
             type512 = 'NeFe-P';
             mbti = 'ENTP Jumper';
-            desc = '';
             break;
     }
-    document.getElementById("test-content").innerHTML = '<h2>You have tested as ' + type512.substr(0,2) + '/' + type512.substr(2,5) + ' (' + mbti + ')</h2><p><img src="types/' + type512 + '.png" alt="Type image for ' + type512.substr(0,2) + '/' + type512.substr(2,5) + '"></p><p>' + desc + '</p><p id="dashboard"><button class="dash" onclick="window.location.href = \'index.html\'">RETAKE TEST</button></p>';
+    document.getElementById("test-content").innerHTML = '<h2>You have tested as ' + type512.substr(0,2) + '/' + type512.substr(2,5) + ' (' + mbti + ')</h2><p><img src="types/' + type512 + '.png" alt="Type image for ' + type512.substr(0,2) + '/' + type512.substr(2,5) + '"></p><div>' + typeDesc(type512) + '</div><p id="dashboard"><button class="dash" onclick="window.location.href = \'index.html\'">RETAKE TEST</button></p>';
 }
