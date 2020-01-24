@@ -156,7 +156,7 @@ function loadQuestion(type) {
     }
     
     
-    textContent += '</p><p id="dashboard"><button class="dash">NEXT</button></p>';
+    textContent += '</p><p id="dashboard"><button class="dash">NEXT QUESTION</button></p>';
     document.getElementById("test-content").innerHTML = textContent;
     questionNumber++;
 }
@@ -169,15 +169,15 @@ function enableNext(opt) {
             button.style.backgroundColor = "#c1c1ff";
             if (questionNumber-1===1) {
                 questionRoute = i+1;
-                document.getElementById("dashboard").innerHTML = '<button class="dash" onclick="loadQuestion(\'' + String(questionRoute) + '\')">NEXT</button>';
+                document.getElementById("dashboard").innerHTML = '<button class="dash" onclick="loadQuestion(\'' + String(questionRoute) + '\')">NEXT QUESTION</button>';
             } else if (questionNumber-1===2) {
-                document.getElementById("dashboard").innerHTML = '<button class="dash" onclick="loadQuestion(\'' + String(questionRoute) + '.' + String(i+1) + '\')">NEXT</button>';
+                document.getElementById("dashboard").innerHTML = '<button class="dash" onclick="loadQuestion(\'' + String(questionRoute) + '.' + String(i+1) + '\')">NEXT QUESTION</button>';
                 secondLevelChoice = i+1;
             } else if (questionNumber-1===3) {
-                document.getElementById("dashboard").innerHTML = '<button class="dash" onclick="loadQuestion(\'' + String(questionRoute) + '.' + String(secondLevelChoice) + '.' + String(i+1) + '\')">NEXT</button>';
+                document.getElementById("dashboard").innerHTML = '<button class="dash" onclick="loadQuestion(\'' + String(questionRoute) + '.' + String(secondLevelChoice) + '.' + String(i+1) + '\')">NEXT QUESTION</button>';
                 thirdLevelChoice = i+1;
             } else {
-                document.getElementById("dashboard").innerHTML = '<button class="dash" onclick="loadType(\'' + String(questionRoute) + '.' + String(secondLevelChoice) + '.' + String(thirdLevelChoice) + '.' + String(i+1) + '\')">NEXT</button>';
+                document.getElementById("dashboard").innerHTML = '<button class="dash" onclick="loadType(\'' + String(questionRoute) + '.' + String(secondLevelChoice) + '.' + String(thirdLevelChoice) + '.' + String(i+1) + '\')">NEXT QUESTION</button>';
                 finalType = String(questionRoute) + String(secondLevelChoice) + String(thirdLevelChoice) + String(i+1);
             }
         } else {
