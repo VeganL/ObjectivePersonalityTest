@@ -22,7 +22,8 @@ button.dash {
 
 button.select {
     width: 100%;
-    height: 70px;
+    height: 200px;
+    font-weight: lighter;
     border: 1px solid #a3a3a3;
     border-radius: 1px;
     box-shadow: 0px 2px 2px #dddddd, 0px 0px 5px #dddddd;
@@ -55,6 +56,14 @@ footer {
     color: #333333;
 }
 
+.test-mode {
+    font-size: 30px;
+}
+
+h2.test-mode {
+    font-size: 40px;
+}
+
 #disclaimer {
     width: 90%;
     margin: 0px 5% 0px 4%;
@@ -84,7 +93,13 @@ h3 {
 
 /*Phones in landscape*/
 @media screen and (min-width: 500px) and (max-width: 900px) and (orientation: landscape) {
+    .test-mode {
+        font-size: 14px;
+    }
 
+    h2.test-mode {
+        font-size: 18px;
+    }
 }
 
 /*Tablets*/
@@ -118,10 +133,15 @@ h3 {
 
     button.select {
         font-size: 14px;
+        height: 70px;
     }
 
     button.dash {
         font-size: 15px;
+    }
+
+    .test-mode {
+        font-size: unset;
     }
 
     h1 {

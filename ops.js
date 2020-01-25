@@ -13,7 +13,7 @@ var questions = {
     "IxFPC": ["",""],
     "IxTPC": ["",""],
 
-    "ejQuestion": ["Tend to interact with people in an improvisational, in-the-moment fashion?","Tend to interact with people in ways meant to organize some aspect of conduct?"],
+    "ejQuestion": ["Tend to interact with people in ways meant to organize some aspect of conduct?","Tend to interact with people in an improvisational, in-the-moment fashion?"],
     "ejij": ["Have trouble expressing reasons that may threaten the status quo?","Find it takes a lot of effort to make decisions based on what you value when it can affect your group's goals?"],
     "ejep": ["Have trouble expressing reasons that may threaten the status quo?","Find it takes a lot of effort to make decisions based on what you value when it can affect your group's goals?"],
     "ExFJB": ["",""],
@@ -21,15 +21,15 @@ var questions = {
     "ExFJP": ["",""],
     "ExTJP": ["",""],
 
-    "ijQuestion": ["Feel naturally obligated to share information and plans or manage the conduct of other people?","Have an inclination to continually revise plans and structure of personal life (whether mentally, or in a tangible manner) and have trouble sharing information to yourself?"],
-    "ijip": ["Feel more threatened by new information that could contradict your current understanding or discredit your ideas?","Feel more threatened by new ideas that could disrupt your current order in reality?"],
-    "ijej": ["Feel more threatened by new information that could contradict your current understanding or discredit your ideas?","Feel more threatened by new ideas that could disrupt your current order in reality?"],
+    "ijQuestion": ["Have an inclination to continually revise plans and structure of personal life (whether mentally, or in a tangible manner) and have trouble sharing information to yourself?","Feel naturally obligated to share information and plans or manage the conduct of other people?"],
+    "ijip": ["Feel more threatened by new ideas that could disrupt your current order in reality?","Feel more threatened by new information that could contradict your current understanding or discredit your ideas?"],
+    "ijej": ["Feel more threatened by new ideas that could disrupt your current order in reality?","Feel more threatened by new information that could contradict your current understanding or discredit your ideas?"],
     "ISxJS": ["",""],
     "INxJS": ["",""],
     "ISxJB": ["",""],
     "INxJB": ["",""],
 
-    "epQuestion": ["Tend to act on new information presented in the moment; interact with people in the environment accordingly?","Naturally take in the information and are not necessarily inclined to share or act on it?"],
+    "epQuestion": ["Naturally take in the information and are not necessarily inclined to share or act on it?","Tend to act on new information presented in the moment; interact with people in the environment accordingly?"],
     "epip": ["Have more trouble processing and understanding things that are not entirely tangible?","Have more trouble organizing factual information and dealing with organization in the real world?"],
     "epej": ["Have more trouble processing and understanding things that are not entirely tangible?","Have more trouble organizing factual information and dealing with organization in the real world?"],
     "ESxPC": ["",""],
@@ -138,21 +138,16 @@ function loadQuestion(type) {
             question = questions.firstQuestion;
     }
 
-    let textContent = '<h2>Question ' + String(questionNumber) + ':</h2><h3>';
+    let textContent = '<h2 class="test-mode">Question ' + String(questionNumber) + ':</h2><h3 class="test-mode">';
     if (questionNumber===1) {
         textContent += 'Which would best describe yourself? Choose one.</h3><p>'
     } else {
         textContent += 'Do you...</h3><p>'
     };
 
-    if (questionNumber != 4) {
-        for (var i = 0; i < question.length; i++) {
-            textContent += '<button class="select" id="' + String(i+1) + '" onclick="enableNext(' + String(i+1) + ')">' + question[i] + '</button>'
-        }
-    } else {
-        for (var i = 0; i < question.length; i++) {
-            textContent += '<button class="select" id="' + String(i+1) + '" onclick="enableNext(' + String(i+1) + ')">' + question[i] + '</button>'
-        }
+
+    for (var i = 0; i < question.length; i++) {
+        textContent += '<button class="select test-mode" id="' + String(i+1) + '" onclick="enableNext(' + String(i+1) + ')">' + question[i] + '</button>'
     }
     
     
@@ -195,14 +190,14 @@ function typeDesc(type512) {
         "Lead sleep types generally like to conserve energy, keep to themselves, and try to avoid doing spontaneous activities unless it's absolutely necessary. If you are one, you may have gotten comments in the past about how you're not an outgoing person, uncooperative. Alternatively, you may have heard from others that you're very introspective.</p>",
         "Lead play types usually live very active, busy, and extraverted lives. Whether or not they are genuinely happy doing so is a different matter, altogether. They generally have a tough time dealing with their inner dialogue and usually find discomforting to face.</p>",
         "People often look up to lead blast types when they need someone they can count on. This is because they always seem to have a ready answer. However, lead blast types generally tend to overlook the specifics of a situation that aren't familiar to them or neglect new ideas, altogether, when trying to solve a problem.</p>",
-        "<p>The presence of Te in your function stack suggests that your form of reasoning is mostly based upon empirics and general consensus. You generally adopt the logic and opinions of other people in making a decision based on reasons and in the delegation of tasks. Your Fi suggests that your sense of identity is formed around what you value and morality. You also generally consume information that evokes an emotional response or anything that entertains/amuses you. However, as one of your \"demons\", you're more inclined to neglect this mode of attention.</p>",
-        "<p>The presence of Fe in your function stack suggests that you generally form your likes and dislikes based on what is socially acceptable. Maintaining harmony and good vibes is something you see as important when interacting with other people, and you try to do so when attempting to get other people to agree with you on something. Your Ti suggests that your sense of identity is formed around your reasons and what you consider to be true. Your information intake is also centered around things that make sense and how things work. However, as one of your \"demons\", you're more inclined to neglect this mode of attention.</p>",
-        "<p>Your Ti suggests that your sense of identity is formed around your reasons and what you consider to be true. Your information intake is also centered around things that make sense and how things work. The presence of Fe in your function stack suggests that you generally form your likes and dislikes based on what is socially acceptable. Maintaining harmony and good vibes is something you see as important when interacting with other people, and you try to do so when attempting to get other people to agree with you on something. However, as one of your \"demons\", you will tend to struggle with this function.</p>",
-        "<p>Your Fi suggests that your sense of identity is formed around what you value and morality. You also generally consume information that evokes an emotional response or anything that entertains/amuses you. The presence of Te in your function stack suggests that your form of reasoning is mostly based upon empirics and general consensus. You generally adopt the logic and opinions of other people in making a decision based on reasons and in the delegation of tasks. However, as one of your \"demons\", you will tend to struggle with this function.</p>",
-        "<p>Your mode of information intake is also generally more abstract because of your Ne. To learn things, you seek for patterns that are in the data and generally get new ideas from such information. Having Si means that the experiences you have or information taken in are stored into chronological series of events and procedures. This can can used to predict particular outcomes of future events. However, as one of your \"demons\", you will generally struggle with using such known detail usefully.",
-        "<p>Your mode of information intake is also generally more concrete because of your Se. To learn things, you tend to pay attention to the procedural details of a process or phenomena. Having Ni means that the experiences you have or knowledge you take in generally adds to universal archetypes which you can fit things into. This can be used to predict large-scale outcomes. However, as one of your \"demons\", you will generally avoid organizing such archetypes.",
-        "<p>Having Ni means that the experiences you have or knowledge you take in generally adds to universal archetypes which you can fit things into. This can be used to predict large-scale outcomes. Your mode of information intake is also generally more concrete because of your Se. To learn things, you tend to pay attention to the procedural details of a process or phenomena. However, as one of your \"demons\", you're more inclined to neglect the intake of such information.",
-        "<p>Having Si means that the experiences you have or information taken in are stored into chronological series of events and procedures. This can can used to predict particular outcomes of future events. Your mode of information intake is also generally more abstract because of your Ne. To learn things, you seek for patterns that are in the data and seek new ideas. However, as one of your \"demons\", you're more inclined to avoid the new ideas presented.",
+        "<p>The presence of Te in your function stack suggests that your form of reasoning is mostly based upon empirics and general consensus. You generally adopt the logic and opinions of other people in making a decision based on reasons and in the delegation of tasks. Your Fi suggests that your sense of identity is formed around what you value and morality. You also generally consume information that evokes an emotional response or anything that entertains/amuses you. However, as one of your \"demons,\" you're more inclined to neglect this mode of attention.</p>",
+        "<p>The presence of Fe in your function stack suggests that you generally form your likes and dislikes based on what is socially acceptable. Maintaining harmony and good vibes is something you see as important when interacting with other people, and you try to do so when attempting to get other people to agree with you on something. Your Ti suggests that your sense of identity is formed around your reasons and what you consider to be true. Your information intake is also centered around things that make sense and how things work. However, as one of your \"demons,\" you're more inclined to neglect this mode of attention.</p>",
+        "<p>Your Ti suggests that your sense of identity is formed around your reasons and what you consider to be true. Your information intake is also centered around things that make sense and how things work. The presence of Fe in your function stack suggests that you generally form your likes and dislikes based on what is socially acceptable. Maintaining harmony and good vibes is something you see as important when interacting with other people, and you try to do so when attempting to get other people to agree with you on something. However, as one of your \"demons,\" you will tend to struggle with this function.</p>",
+        "<p>Your Fi suggests that your sense of identity is formed around what you value and morality. You also generally consume information that evokes an emotional response or anything that entertains/amuses you. The presence of Te in your function stack suggests that your form of reasoning is mostly based upon empirics and general consensus. You generally adopt the logic and opinions of other people in making a decision based on reasons and in the delegation of tasks. However, as one of your \"demons,\" you will tend to struggle with this function.</p>",
+        "<p>Your mode of information intake is also generally more abstract because of your Ne. To learn things, you seek for patterns that are in the data and generally get new ideas from such information. Having Si means that the experiences you have or information taken in are stored into chronological series of events and procedures. This can can used to predict particular outcomes of future events. However, as one of your \"demons,\" you will generally struggle with using such known detail usefully.",
+        "<p>Your mode of information intake is also generally more concrete because of your Se. To learn things, you tend to pay attention to the procedural details of a process or phenomena. Having Ni means that the experiences you have or knowledge you take in generally adds to universal archetypes which you can fit things into. This can be used to predict large-scale outcomes. However, as one of your \"demons,\" you will generally avoid organizing such archetypes.",
+        "<p>Having Ni means that the experiences you have or knowledge you take in generally adds to universal archetypes which you can fit things into. This can be used to predict large-scale outcomes. Your mode of information intake is also generally more concrete because of your Se. To learn things, you tend to pay attention to the procedural details of a process or phenomena. However, as one of your \"demons,\" you're more inclined to neglect the intake of such information.",
+        "<p>Having Si means that the experiences you have or information taken in are stored into chronological series of events and procedures. This can can used to predict particular outcomes of future events. Your mode of information intake is also generally more abstract because of your Ne. To learn things, you seek for patterns that are in the data and seek new ideas. However, as one of your \"demons,\" you're more inclined to avoid the new ideas presented.",
     ];
 
     let typeDisectionArray = [
