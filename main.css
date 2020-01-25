@@ -160,5 +160,6 @@ h3 {
         bottom: 0;
         width: 100%;
         font-size: 12px;
+        display: block;
     }
 }
