@@ -11,7 +11,6 @@ button:focus {
 button.dash {
     color: #fdfdfd;
     font-weight: bold;
-    font-size: 40px;
     border: 1px solid #a3a3a3;
     border-radius: 1px;
     box-shadow: 0px 2px 2px #dddddd, 0px 0px 5px #dddddd;
@@ -22,7 +21,7 @@ button.dash {
 
 button.select {
     width: 100%;
-    height: 200px;
+    height: 90px;
     font-weight: lighter;
     border: 1px solid #a3a3a3;
     border-radius: 1px;
@@ -52,16 +51,8 @@ footer {
 #test-content {
     width: 90%;
     margin: 0px 0px 5% 5%;
-    font-size: 12px;
+    font-size: 14px;
     color: #333333;
-}
-
-.test-mode {
-    font-size: 30px;
-}
-
-h2.test-mode {
-    font-size: 40px;
 }
 
 #disclaimer {
@@ -72,6 +63,7 @@ h2.test-mode {
 }
 
 h1 {
+    font-size: 25px;
     color: #fdfdfd;
     padding: 5px 0 10px 0;
     background-color: #0c0c29;
@@ -80,7 +72,7 @@ h1 {
 }
 
 h2 {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 500;
     margin-bottom: 0px;
 }
@@ -91,25 +83,23 @@ h3 {
     margin-bottom: 0px;
 }
 
-/*Phones in landscape*/
-@media screen and (min-width: 500px) and (max-width: 900px) and (orientation: landscape) {
-    .test-mode {
-        font-size: 14px;
-    }
-
-    h2.test-mode {
-        font-size: 18px;
-    }
-}
-
 /*Tablets*/
 @media screen and (min-width: 700px) and (max-width: 1024px) and (orientation: portrait) {
-
+    h1 {font-size: 30px;}
+    h2 {font-size: 24px;}
+    h3 {font-size: 22px;}
+    #test-content {font-size: 20px;}
+    button {font-size: 18px;}
 }
 
 /*Larger tablets*/
 @media screen and (min-width: 1000px) and (min-height: 1300px) and (orientation: portrait) {
-
+    h1 {font-size: 50px;}
+    h2 {font-size: 35px;}
+    h3 {font-size: 30px;}
+    #test-content {font-size: 25px;}
+    button {font-size: 24px;}
+    button.select {height: 140px;}
 }
 
 /*Desktop*/
@@ -122,38 +112,18 @@ h3 {
         box-shadow: 0px 2px 2px #dddddd, 0px 0px 5px #dddddd;
     }
 
-    #test-content {
-        font-size: 14px;
-    }
-
     #disclaimer {
         border-radius: 1px;
         box-shadow: 0px 2px 2px #dddddd, 0px 0px 5px #dddddd;
     }
 
-    button.select {
-        font-size: 14px;
-        height: 70px;
-    }
-
-    button.dash {
-        font-size: 15px;
-    }
-
-    .test-mode {
-        font-size: unset;
-    }
-
     h1 {
+        font-size: 40px;
         color: #fdfdfd;
         padding: 5px 0 10px 0;
         background-color: #0c0c29;
         margin: 0 0 10px 0;
         box-shadow: 0px 2px 2px #dddddd, 0px 0px 10px #dddddd;
-    }
-
-    h2 {
-        font-size: 18px;
     }
 
     footer {

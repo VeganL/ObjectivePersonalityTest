@@ -138,7 +138,7 @@ function loadQuestion(type) {
             question = questions.firstQuestion;
     }
 
-    let textContent = '<h2 class="test-mode">Question ' + String(questionNumber) + ':</h2><h3 class="test-mode">';
+    let textContent = '<h2>Question ' + String(questionNumber) + ':</h2><h3>';
     if (questionNumber===1) {
         textContent += 'Which would best describe yourself? Choose one.</h3><p>'
     } else {
@@ -147,7 +147,7 @@ function loadQuestion(type) {
 
 
     for (var i = 0; i < question.length; i++) {
-        textContent += '<button class="select test-mode" id="' + String(i+1) + '" onclick="enableNext(' + String(i+1) + ')">' + question[i] + '</button>'
+        textContent += '<button class="select" id="' + String(i+1) + '" onclick="enableNext(' + String(i+1) + ')">' + question[i] + '</button>'
     }
     
     
