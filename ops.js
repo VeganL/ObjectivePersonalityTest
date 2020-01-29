@@ -21,7 +21,7 @@ var questions = {
     "ExFJP": ["Find more comfort in learning in a manner which may not be inherently applicable to reality?","Find more comfort dealing with learning tangible, real-world skills?"],
     "ExTJP": ["Find more comfort in learning in a manner which may not be inherently applicable to reality?","Find more comfort dealing with learning tangible, real-world skills?"],
 
-    "ijQuestion": ["Have an inclination to continually revise plans and structure of personal life (whether mentally, or in a tangible manner) and have trouble sharing information to yourself?","Feel naturally obligated to share information and plans or manage the conduct of other people?"],
+    "ijQuestion": ["Have an inclination to continually revise plans and structure of personal life (whether mentally, or in a tangible manner) and have trouble sharing information about yourself?","Feel naturally obligated to share information and plans or manage the conduct of other people?"],
     "ijip": ["Feel more threatened by new ideas that could disrupt your current order in reality?","Feel more threatened by new information that could contradict your current understanding or discredit your ideas?"],
     "ijej": ["Feel more threatened by new ideas that could disrupt your current order in reality?","Feel more threatened by new information that could contradict your current understanding or discredit your ideas?"],
     "ISxJS": ["Spend more time dwelling in the procedural knowledge of things?","Spend more time filtering out things you do and don't value?"],
