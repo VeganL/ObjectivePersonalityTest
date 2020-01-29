@@ -8,34 +8,34 @@ var questions = {
     "ipQuestion": ["Find the intake of new information to be more of a chore?","Spend a majority of your time learning new things?"],
     "ipij": ["Have trouble conveying reasons to other people as to why you do things a certain way?","Have trouble handling or expressing your emotions or the emotions of other people?"], //FINISH QUESTIONS ON FLOW CHART AND PUT THEM HERE
     "ipep": ["Have trouble conveying reasons to other people as to why you do things a certain way?","Have trouble handling or expressing your emotions or the emotions of other people?"],
-    "IxFPS": ["",""],
-    "IxTPS": ["",""],
-    "IxFPC": ["",""],
-    "IxTPC": ["",""],
+    "IxFPS": ["Find physical organization is something you are flexible about?","Have very particular ways of organizing your environment or daily conduct?"],
+    "IxTPS": ["Find physical organization is something you are flexible about?","Have very particular ways of organizing your environment or daily conduct?"],
+    "IxFPC": ["Find more comfort dealing with learning tangible, real-world skills?","Find more comfort in learning in a manner which may not be inherently applicable to reality?"],
+    "IxTPC": ["Find more comfort dealing with learning tangible, real-world skills?","Find more comfort in learning in a manner which may not be inherently applicable to reality?"],
 
     "ejQuestion": ["Tend to interact with people in ways meant to organize some aspect of conduct?","Tend to interact with people in an improvisational, in-the-moment fashion?"],
     "ejij": ["Have trouble expressing reasons that may threaten the status quo?","Find it takes a lot of effort to make decisions based on what you value when it can affect your group's goals?"],
     "ejep": ["Have trouble expressing reasons that may threaten the status quo?","Find it takes a lot of effort to make decisions based on what you value when it can affect your group's goals?"],
-    "ExFJB": ["",""],
-    "ExTJB": ["",""],
-    "ExFJP": ["",""],
-    "ExTJP": ["",""],
+    "ExFJB": ["Have very particular ways of organizing your environment or daily conduct?","Find physical organization is something you are flexible about?"],
+    "ExTJB": ["Have very particular ways of organizing your environment or daily conduct?","Find physical organization is something you are flexible about?"],
+    "ExFJP": ["Find more comfort in learning in a manner which may not be inherently applicable to reality?","Find more comfort dealing with learning tangible, real-world skills?"],
+    "ExTJP": ["Find more comfort in learning in a manner which may not be inherently applicable to reality?","Find more comfort dealing with learning tangible, real-world skills?"],
 
     "ijQuestion": ["Have an inclination to continually revise plans and structure of personal life (whether mentally, or in a tangible manner) and have trouble sharing information to yourself?","Feel naturally obligated to share information and plans or manage the conduct of other people?"],
     "ijip": ["Feel more threatened by new ideas that could disrupt your current order in reality?","Feel more threatened by new information that could contradict your current understanding or discredit your ideas?"],
     "ijej": ["Feel more threatened by new ideas that could disrupt your current order in reality?","Feel more threatened by new information that could contradict your current understanding or discredit your ideas?"],
-    "ISxJS": ["",""],
-    "INxJS": ["",""],
-    "ISxJB": ["",""],
-    "INxJB": ["",""],
+    "ISxJS": ["Spend more time dwelling in the procedural knowledge of things?","Spend more time filtering out things you do and don't value?"],
+    "INxJS": ["Spend more time dwelling in the working knowledge and logical reasoning of things?","Spend more time filtering out ideas you do and don't value?"],
+    "ISxJB": ["Prioritize the harmony of a situation or group you are a part of?","Prioritize making sure things are in working order?"],
+    "INxJB": ["Prioritize the harmony of a situation or group you are a part of?","Prioritize making sure things are in working order?"],
 
     "epQuestion": ["Naturally take in the information and are not necessarily inclined to share or act on it?","Tend to act on new information presented in the moment; interact with people in the environment accordingly?"],
     "epip": ["Have more trouble processing and understanding things that are not entirely tangible?","Have more trouble organizing factual information and dealing with organization in the real world?"],
     "epej": ["Have more trouble processing and understanding things that are not entirely tangible?","Have more trouble organizing factual information and dealing with organization in the real world?"],
-    "ESxPC": ["",""],
-    "ENxPC": ["",""],
-    "ESxPP": ["",""],
-    "ENxPP": ["",""],
+    "ESxPC": ["Prefer to expose yourself to new things you find appealing?","Prefer learning about how things and systems work?"],
+    "ENxPC": ["Prefer to expose yourself to new things you find appealing?","Prefer learning about how things and systems work?"],
+    "ESxPP": ["Prioritize making sure things are in working order?","Prioritize the harmony of a situation or group you are a part of?"],
+    "ENxPP": ["Prioritize making sure things are in working order?","Prioritize the harmony of a situation or group you are a part of?"],
 }
 
 var questionNumber = 1;
@@ -139,10 +139,10 @@ function loadQuestion(type) {
     }
 
     let textContent = '<h2>Question ' + String(questionNumber) + ':</h2><h3>';
-    if (questionNumber===1) {
+    if (questionNumber === 1) {
         textContent += 'Which would best describe yourself? Choose one.</h3><p>'
     } else {
-        textContent += 'Do you...</h3><p>'
+        textContent += 'Which do you find yourself doing more/most often? Do you...</h3><p>'
     };
 
 
@@ -150,8 +150,12 @@ function loadQuestion(type) {
         textContent += '<button class="select" id="' + String(i+1) + '" onclick="enableNext(' + String(i+1) + ')">' + question[i] + '</button>'
     }
     
+    if (questionNumber === 4) {
+        textContent += '</p><p id="dashboard"><button class="dash">GET RESULTS</button></p>';
+    } else {
+        textContent += '</p><p id="dashboard"><button class="dash">NEXT QUESTION</button></p>';
+    }
     
-    textContent += '</p><p id="dashboard"><button class="dash">NEXT QUESTION</button></p>';
     document.getElementById("test-content").innerHTML = textContent;
     questionNumber++;
 }
@@ -172,7 +176,7 @@ function enableNext(opt) {
                 document.getElementById("dashboard").innerHTML = '<button class="dash" onclick="loadQuestion(\'' + String(questionRoute) + '.' + String(secondLevelChoice) + '.' + String(i+1) + '\')">NEXT QUESTION</button>';
                 thirdLevelChoice = i+1;
             } else {
-                document.getElementById("dashboard").innerHTML = '<button class="dash" onclick="loadType(\'' + String(questionRoute) + '.' + String(secondLevelChoice) + '.' + String(thirdLevelChoice) + '.' + String(i+1) + '\')">NEXT QUESTION</button>';
+                document.getElementById("dashboard").innerHTML = '<button class="dash" onclick="loadType(\'' + String(questionRoute) + '.' + String(secondLevelChoice) + '.' + String(thirdLevelChoice) + '.' + String(i+1) + '\')">GET RESULTS</button>';
                 finalType = String(questionRoute) + String(secondLevelChoice) + String(thirdLevelChoice) + String(i+1);
             }
         } else {
@@ -358,5 +362,5 @@ function loadType(type) {
             mbti = 'ENTP Jumper';
             break;
     }
-    document.getElementById("test-content").innerHTML = '<h2>You have tested as ' + type512.substr(0,2) + '/' + type512.substr(2,5) + ' (' + mbti + ')</h2><p><img src="types/' + type512 + '.png" alt="Type image for ' + type512.substr(0,2) + '/' + type512.substr(2,5) + '"></p><div>' + typeDesc(type512) + '</div><p id="dashboard"><button class="dash" onclick="window.location.href = \'index.html\'">RETAKE TEST</button></p>';
+    document.getElementById("test-content").innerHTML = '<h2>You have tested as ' + type512.substr(0,2) + '/' + type512.substr(2,5) + ' (' + mbti + ')</h2><p><img src="types/' + type512 + '.png" alt="Type image for ' + type512.substr(0,2) + '/' + type512.substr(2,5) + '"></p><div>' + typeDesc(type512) + '</div><p id="dashboard"><button class="dash" onclick="window.print()">SAVE RESULTS</button><button class="dash" onclick="window.location.href = \'index.html\'">RETAKE TEST</button></p>';
 }
